@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dice_roll_game", "dice_roll
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "todo", "todoList\todo.csproj", "{D0733991-FA9C-400B-86BB-4B1BDC87FBED}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cookbook", "cookbook\cookbook.csproj", "{5F324FCA-4A71-4E80-AD8F-67A8639CB704}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{D0733991-FA9C-400B-86BB-4B1BDC87FBED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D0733991-FA9C-400B-86BB-4B1BDC87FBED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D0733991-FA9C-400B-86BB-4B1BDC87FBED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F324FCA-4A71-4E80-AD8F-67A8639CB704}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F324FCA-4A71-4E80-AD8F-67A8639CB704}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F324FCA-4A71-4E80-AD8F-67A8639CB704}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F324FCA-4A71-4E80-AD8F-67A8639CB704}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
