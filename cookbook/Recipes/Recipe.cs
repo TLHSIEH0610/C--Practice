@@ -1,23 +1,25 @@
-
+using cookbook.Recipes.Ingredients;
 namespace cookbook.Recipes
 {
     public class Recipe
     {
         public IEnumerable<Ingredient> Ingredients { get; }
-        public Recipe(IEnumerable<Ingredient> ingridents)
+        public Recipe(List<Ingredient> ingridents)
         {
             Ingredients = ingridents;
         }
 
+        public override string ToString()
+        {
+            var steps = new List<string>();
+            foreach (var ingredient in Ingredients)
+            {
+                steps.Add($"{ingredient.Name}. {ingredient.PreparationInstructions}");
+            }
+
+            return string.Join(Environment.NewLine, steps);
+        }
+
     }
 
-    public abstract class Ingredient
-    {
-        public abstract int Id { get; }
-
-        public abstract string Name { get; }
-
-        public virtual string PreparationInstructions => "add to other ingred";
-
-    }
 }
