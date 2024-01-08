@@ -4,8 +4,8 @@ recipeApp.Run();
 public class RecipeApp
 {
 
-    private readonly RecipeRepository _recipeRepository;
-    private readonly RecipeUserInteraction _recipeUserInteraction;
+    private readonly IRecipeRepository _recipeRepository;
+    private readonly IRecipeUserInteraction _recipeUserInteraction;
 
     public RecipeApp(RecipeRepository recipeRepository, RecipeUserInteraction recipeUserInteraction)
     {
@@ -26,8 +26,8 @@ public class RecipeApp
             var recipe = new Recipe(ingredients);
             allRecipes.Add(recipe);
             _recipeRepository.write(filePath, allRecipes);
-            _recipeUserInteraction.showMessage("recipe added");
-            _recipeUserInteraction.showMessage(recipe.ToString());
+            _recipeUserInteraction.ShowMessage("recipe added");
+            _recipeUserInteraction.ShowMessage(recipe.ToString());
 
 
         }
@@ -41,14 +41,33 @@ public class RecipeApp
     }
 }
 
-public class RecipeRepository
+public interface IRecipeRepository
 {
 
 }
 
-public class RecipeUserInteraction
+public class RecipeRepository : IRecipeRepository
 {
 
+}
+
+public interface IRecipeUserInteraction
+{
+    void ShowMessage(string message);
+    void Exit();
+}
+
+public class RecipeUserInteraction : IRecipeUserInteraction
+{
+    public void ShowMessage(string message)
+    {
+        Console.WriteLine(message);
+    }
+    public void Exit()
+    {
+        Console.WriteLine("Press any key to console");
+        Console.ReadKey();
+    }
 }
 
 public class Recipe { }
